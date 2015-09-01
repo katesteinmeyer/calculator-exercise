@@ -1,62 +1,36 @@
- var div_element1 = document.createElement('div');
- div_element1.innerHTML = " ";
- document.body.appendChild(div_element1);
- div_element1.id = 'calculator';
+ var calculator = document.createElement("div");
+    calculator.id = "calculator";
+    document.body.appendChild(calculator);
+    var header = document.createElement("h3");
+    header.innerText = "Calculator";
+    calculator.appendChild(header);
+    var num = 1;
+for (i=1; i<=12; i++) {
+    var row1 = document.createElement("button");
+        if (i == 4) {
+            row1.innerText = "+";
+        }
+            else if (i == 8) {
+                row1.innerText = "-";
+            }
+               else if (i == 12) {
+                row1.innerText = "="; 
+            }
+                else {
+                    row1.innerText = num
+                    num++
+                }
+                    calculator.appendChild(row1);
+}
+    var solution_bar = document.createElement("p");
+    solution_bar.id = "solution_bar";
+    calculator.appendChild(solution_bar);
 
-var header = document.createElement('h1');
-header.innerHTML = "Calculate All The Things";
-document.getElementById('calculator').appendChild(header);
+var button1 = document.getElementsByTagName('button')[0];
+console.log(button1);
 
-var div_element2 = document.createElement('div');
-div_element2.innerHTML="1";
-document.getElementById('calculator').appendChild(div_element2);
+function giveMeYourValue(e){
+    console.log(e.target.value);
+}
 
-var div_element3 = document.createElement('div');
-div_element3.innerHTML="2";
-document.getElementById('calculator').appendChild(div_element3);
-
-var div_element4 = document.createElement('div');
-div_element4.innerHTML="3";
-document.getElementById('calculator').appendChild(div_element4);
-
-var div_element5 = document.createElement('div');
-div_element5.innerHTML="+";
-document.getElementById('calculator').appendChild(div_element5);
-
-var div_element6 = document.createElement('div');
-div_element6.innerHTML="4";
-document.getElementById('calculator').appendChild(div_element6);
-
-var div_element7 = document.createElement('div');
-div_element7.innerHTML="5";
-document.getElementById('calculator').appendChild(div_element7);
-
-var div_element8 = document.createElement('div');
-div_element8.innerHTML="6";
-document.getElementById('calculator').appendChild(div_element8);
-
-var div_element9 = document.createElement('div');
-div_element9.innerHTML="-";
-document.getElementById('calculator').appendChild(div_element9);
-
-
-var div_element10 = document.createElement('div');
-div_element10.innerHTML="7";
-document.getElementById('calculator').appendChild(div_element10);
-
-var div_element11 = document.createElement('div');
-div_element11.innerHTML="8";
-document.getElementById('calculator').appendChild(div_element11);
-
-var div_element12 = document.createElement('div');
-div_element12.innerHTML="9";
-document.getElementById('calculator').appendChild(div_element12);
-
-var div_element13 = document.createElement('div');
-div_element13.innerHTML="=";
-document.getElementById('calculator').appendChild(div_element13);
-
-var div_solution = document.createElement('div');
-div_solution.innerHTML=" ";
-document.getElementById('calculator').appendChild(div_solution);
-div_solution.id = 'solution_bar';
+button1.addEventListener('click', giveMeYourValue);
